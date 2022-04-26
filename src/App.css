@@ -1,0 +1,155 @@
+:root {
+  --main-bg-colour: #eee;
+  --main-text-colour: #333;
+  --main-accent-colour: orange;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-colour);
+  color: var(--main-text-colour);
+  overflow-x: hidden;
+}
+
+.App {
+  width: 80vw;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  height: 80px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.138);
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  color: var(--main-text-colour);
+  /* border-bottom: 1px solid black; */
+}
+
+select:active,
+select:focus {
+  outline: none;
+  color: var(--main-accent-colour);
+}
+
+option {
+  color: var(--main-text-colour);
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.list {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  /* grid-auto-columns: minmax(125px, auto); */
+  gap: 50px;
+}
+
+.list-item {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.135);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.list-item:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.name {
+  font-weight: bold;
+}
+
+button {
+  background-color: var(--main-text-colour);
+  color: var(--main-bg-colour);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 20px 0;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.161);
+  transition: all .3s ease;
+}
+
+button:hover {
+  background-color: var(--main-accent-colour);
+  color: var(--main-bg-colour);
+  box-shadow: inset 5px 5px 8px rgba(0, 0, 0, 0.161);
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text-colour);
+}
+
+.footer {
+  position: relative;
+  bottom: -15px;
+  left: 0;
+  text-align: center;
+  padding: 10px;
+  height: 5vh;
+  width: 100vw;
+  background-color: #fff;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.gh-link {
+  color: var(--main-accent-colour);
+}
