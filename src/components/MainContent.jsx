@@ -13,7 +13,7 @@ const MainContent = () => {
 
     useEffect(() => {
       fetch(
-        "https://green-meadow-0b6c10003.azurestaticapps.net/building-location.json"
+        "http://localhost:9000/"
       )
         .then((res) => res.json())
         .then(({ locations }) => {
