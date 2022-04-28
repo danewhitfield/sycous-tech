@@ -34,14 +34,14 @@ const MainContent = () => {
 
         if(filter === 'none') {return (
           <main className='main'>
-              <DropDown setFilter={setFilter} />
+              <DropDown setFilter={setFilter} filter={filter} />
               <div className="list-container">
                   <ul className='list'>
                       {consumers.slice(0, visibile).map(consumer => {
                           return consumer.map(person => {
                               return (
-                                  <Link to={`/location/${person.consumerId}`}>
-                                      <li key={person.email} className='list-item'>
+                                  <Link key={person.email} to={`/location/${person.consumerId}`}>
+                                      <li className='list-item'>
                                           <p className='name'>{person.name}</p>
                                           <p>{person.email}</p>
                                           <p>{person.phoneNumber}</p>
@@ -51,13 +51,13 @@ const MainContent = () => {
                           )})
                       })}
                   </ul>
-                  <LoadMoreBtn setVisible={setVisible} />
+                  <LoadMoreBtn filter={filter} setVisible={setVisible} />
               </div>
           </main>
         )}
         else if(filter === 'is-phone') {
             return (
-                <FilterPhone filteredData={filteredData} filter={filter} visibile={visibile} />
+                <FilterPhone filteredData={filteredData} filter={filter} setFilter={setFilter} setVisible={setVisible} visibile={visibile} />
             )
         }
 

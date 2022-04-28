@@ -1,8 +1,8 @@
 import React from 'react'
 
-const LoadMoreBtn = ({setVisible}) => {
+const LoadMoreBtn = ({filter, setVisible, setFilterVisible}) => {
   const loadMore = () => {
-      setVisible(prev => prev + 3)
+      filter === 'none' ? setVisible(prev => prev + 3) : setFilterVisible(prev => prev + 3)
   }
 
   return (

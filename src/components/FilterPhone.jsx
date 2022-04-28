@@ -1,14 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DropDown from './DropDown'
 import LoadMoreBtn from './LoadMoreBtn'
 import MainContent from './MainContent'
 
-const FilterPhone = ({filteredData, filter, visible}) => {
-  if(filter === 'is-phone') {return (
+const FilterPhone = ({filteredData, filter, setFilter}) => {
+  const [filterVisibile, setFilterVisible] = useState(3)
+
+  if(filter === 'is-phone') {
+    return (
     <div className='list-container'>
-      <DropDown />
+      <DropDown setFilter={setFilter} />
       <ul className="list">
-        {filteredData.slice(0, visible).map(data => {
+        {filteredData.slice(0, filterVisibile).map(data => {
           return data.map(x => {
               return (
                   <li key={x.email} className='list-item'>
@@ -21,7 +24,7 @@ const FilterPhone = ({filteredData, filter, visible}) => {
             })
           })}
       </ul>
-      <LoadMoreBtn />
+      <LoadMoreBtn setFilterVisible={setFilterVisible} filter={filter} />
     </div>)
     } else if(filter === 'none') {
       return <MainContent />
