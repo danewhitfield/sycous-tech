@@ -1,29 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import FilterPhone from './FilterPhone'
-import { getData } from '../utils/api'
 import LoadMoreBtn from './LoadMoreBtn'
 import DropDown from './DropDown'
 import { Link } from 'react-router-dom'
 
-const MainContent = () => {
+const MainContent = ({data}) => {
     const [filter, setFilter] = useState('none')
-    const [data, setData] = useState();
-    const [isErr, setIsErr] = useState(false)
     const [visibile, setVisible] = useState(3)
-
-    useEffect(() => {
-      fetch(
-        "http://localhost:9000/"
-      )
-        .then((res) => res.json())
-        .then(({ locations }) => {
-          setData(locations);
-        }).catch(err => {
-            console.log(err)
-            setIsErr(true)
-        })
-        // getData().then(res => setData(res))
-    }, []);
 
     if(data) {
     const consumers = data.map(location => location.consumers).map(consumer => consumer)
@@ -40,15 +23,16 @@ const MainContent = () => {
                       {consumers.slice(0, visibile).map(consumer => {
                           return consumer.map(person => {
                               return (
-                                  <Link key={person.email} to={`/location/${person.consumerId}`}>
-                                      <li className='list-item'>
-                                          <p className='name'>{person.name}</p>
-                                          <p>{person.email}</p>
-                                          <p>{person.phoneNumber}</p>
-                                          <p>{person.occupationDate}</p>
-                                      </li>
-                                  </Link>
-                          )})
+                                <Link key={person.email} to={`/location/${person.consumerId}`}>
+                                    <li className='list-item'>
+                                        <p className='name'>{person.name}</p>
+                                        <p>{person.email}</p>
+                                        <p>{person.phoneNumber}</p>
+                                        <p>{person.occupationDate}</p>
+                                    </li>
+                                </Link>
+                          )
+                        })
                       })}
                   </ul>
                   <LoadMoreBtn filter={filter} setVisible={setVisible} />
@@ -60,11 +44,9 @@ const MainContent = () => {
                 <FilterPhone filteredData={filteredData} filter={filter} setFilter={setFilter} setVisible={setVisible} visibile={visibile} />
             )
         }
-
     } else if(!data) {
         return <h1>Loading Data...</h1>
     }
-    {if(isErr) return <h1>There has been an error :(</h1>}
 }
 
 export default MainContent

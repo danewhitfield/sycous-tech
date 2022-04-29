@@ -1,7 +1,9 @@
 :root {
   --main-bg-colour: #eee;
   --main-text-colour: #333;
-  --main-accent-colour: orange;
+  --main-accent-colour: rgb(255, 166, 0);
+
+  --card-bg-color: rgb(255, 255, 255);
 }
 
 * {
@@ -40,7 +42,7 @@ body {
   width: 100vw;
   text-align: center;
   text-transform: uppercase;
-  background-color: #fff;
+  background-color: var(--card-bg-color);
   height: 80px;
   margin-top: -20px;
   margin-bottom: 30px;
@@ -51,7 +53,6 @@ select {
   border: none;
   background-color: transparent;
   color: var(--main-text-colour);
-  /* border-bottom: 1px solid black; */
 }
 
 select:active,
@@ -101,7 +102,7 @@ ul {
 
 .list-item {
   width: 300px;
-  background-color: #fff;
+  background-color: var(--card-bg-color);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.135);
@@ -143,17 +144,30 @@ a {
 
 .footer {
   position: relative;
-  bottom: -15px;
+  bottom: -20px;
   left: 0;
   text-align: center;
   padding: 10px;
   height: 5vh;
   width: 100vw;
-  background-color: #fff;
+  background-color: var(--card-bg-color);
   font-style: italic;
   font-weight: bold;
 }
 
 .gh-link {
   color: var(--main-accent-colour);
+}
+
+.location-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
 }

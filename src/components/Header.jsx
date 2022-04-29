@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header>
-        <Link to={'/'} className='header'><h1>Sycous Data</h1></Link>
+    <header className='header'> 
+        <Link to={'/'}><h1>Sycous Data</h1></Link>
     </header>
   )
 }
