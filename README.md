@@ -22,8 +22,10 @@ Which will install `Express`, `request`, `react-router-dom` and some other non-e
 
 ### Running The App
 
-In the package.json file you will find a script setup for `server`, you can run this by using the command `npm run server`. This will setup the proxy required to get access to the API. Once that's ran we can use `npm start` to run the React app. I would advise to have a split terminal to run both commands as you will need both running together.
-In the package.json file you will find a script setup for `server`, you can run this by using the command `npm run server`. This will setup the proxy required to get access to the API. Once that's ran we can use `npm start` to run the React app.
+In the package.json file you will find a script setup for `server`, you can run this by using the command `npm run server`. This will setup the proxy required to get access to the API. Once that's ran we can use `npm start` to run the React app. 
+<br>
+<br>
+_I would advise to have a split terminal to run both commands as you will need both running together._
 
 ---
 
