@@ -31,3 +31,10 @@ _I would advise to have a split terminal to run both commands as you will need b
 
 ### Proxy
 The proxy is set to run on `PORT:9000` assuming you have it available. If not you will need to change the PORT to one you do have free in `/db/index.js` on `line 26`.
+
+---
+
+### Deployment
+
+Just for fun I deployed with Netlify but unfortunately it will only run if the server is currently running:
+[Click here to see the app not work](https://sycous-x-dane.netlify.app/)
