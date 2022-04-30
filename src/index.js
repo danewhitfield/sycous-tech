@@ -10,6 +10,7 @@ const theme = {
     mainAccent: "rgb(255, 166, 0)",
     mainText: "#333",
     mainCard: "#fff",
+    sycousAccent: "#2C3D4F",
   },
 };
 

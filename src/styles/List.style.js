@@ -8,14 +8,6 @@ export const StyledList = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 
-  & div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
   li {
     width: 300px;
     background-color: ${({ theme }) => theme.colors.mainCard};
@@ -28,6 +20,8 @@ export const StyledList = styled.ul`
 
   li:hover {
     transform: translateY(-4px) scale(1.01);
+    background-color: ${({ theme }) => theme.colors.sycousAccent};
+    color: ${({ theme }) => theme.colors.mainBg};
   }
 
   p {

@@ -6,7 +6,7 @@ export const StyledLocationPage = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 26px;
   background-color: ${({ theme }) => theme.colors.mainCard};
   border-radius: 10px;
   padding: 20px;
@@ -16,6 +16,66 @@ export const StyledLocationPage = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-4px) scale(1.01);
+    background-color: ${({ theme }) => theme.colors.sycousAccent};
+    color: ${({ theme }) => theme.colors.mainBg};
+  }
+
+  div span {
+    transition: all 0.6s ease-in-out;
+  }
+
+  /* OVERLAY */
+  /* &:hover > div span {
+    width: 100vw;
+    height: 1080px;
+    position: absolute;
+    background-color: #333;
+    opacity: 0.4;
+    z-index: -1;
+  } */
+
+  div {
+    position: relative;
+    top: -70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    background-color: ${({ theme }) => theme.colors.mainCard};
+    border: none;
+    border-radius: 50%;
+  }
+
+  &:hover > div {
+    visibility: visible;
+    border: 4px solid ${({ theme }) => theme.colors.sycousAccent};
+  }
+
+  section h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    position: relative;
+  }
+
+  section h3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    width: 0;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.sycousAccent};
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover > section h3::after {
+    width: 250px;
+    background-color: ${({ theme }) => theme.colors.mainBg};
   }
 `;

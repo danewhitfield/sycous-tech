@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLoadMoreBtn = styled.button`
-  background-color: ${({ theme }) => theme.colors.mainText};
+  background-color: ${({ theme }) => theme.colors.sycousAccent};
   color: ${({ theme }) => theme.colors.mainBg};
   border: none;
   border-radius: 6px;
