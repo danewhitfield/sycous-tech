@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { StyledLink } from '../styles/Link.style'
 import { StyledList } from '../styles/List.style'
-import DropDown from './DropDown'
+import DropDown from './DropDown.jsx'
 import LoadMoreBtn from './LoadMoreBtn'
 import MainContent from './MainContent'
 

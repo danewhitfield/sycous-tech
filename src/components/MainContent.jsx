@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import FilterPhone from './FilterPhone'
 import LoadMoreBtn from './LoadMoreBtn'
-import DropDown from './DropDown'
+import DropDown from './DropDown.jsx'
 import { Link } from 'react-router-dom'
 import { StyledMain } from '../styles/Main.style'
 import { StyledList } from '../styles/List.style'
