@@ -16,7 +16,7 @@ npm i
 
 _Hint: make sure you are in the root directory of the project_
 <br>
-Which will install `Express`, `request`, `react-router-dom`, `styled-components` and some other non-essential dependencies such as `nodemon`.
+Which will install `Express`, `request`, `react-router-dom`, `styled-components`, `dotenv` and some other non-essential dependencies such as `nodemon`.
 
 ---
 
@@ -39,3 +39,14 @@ The proxy is set to run on `PORT:9000` assuming you have it available. If not yo
 
 Just for fun I deployed with Netlify but unfortunately it will only run if the server is currently running:
 [Click here to see the app not work](https://sycous-x-dane.netlify.app/)
+
+---
+
+### .env
+
+Just to throw it into the mix for best practises I added dotenv for the proxy URL.
+<br>
+Feel free to just uncomment the actual URL - but in case you want to test it, create a .env file with the following key/value:
+```
+URL=https://green-meadow-0b6c10003.azurestaticapps.net/building-location.json
+```
