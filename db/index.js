@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   request(
     {
       url: process.env.URL,
-      // url: https://green-meadow-0b6c10003.azurestaticapps.net/building-location.json
+      // url: 'https://green-meadow-0b6c10003.azurestaticapps.net/building-location.json'
     },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
