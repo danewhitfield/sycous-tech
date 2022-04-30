@@ -6,17 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import LocationPage from "./components/LocationPage";
 import MainContent from "./components/MainContent";
 import { StyledApp } from "./styles/App.style";
-import { ThemeProvider } from "styled-components";
 import { Global } from "./styles/Global";
-
-const theme = {
-  colors: {
-    mainBg: "#eee",
-    mainAccent: "rgb(255, 166, 0)",
-    mainText: "#333",
-    mainCard: "#fff",
-  },
-};
 
 function App() {
   const [data, setData] = useState();
@@ -33,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Global />
       <StyledApp>
         <Header />
@@ -46,7 +36,7 @@ function App() {
         </Routes>
         <Footer />
       </StyledApp>
-    </ThemeProvider>
+    </>
   );
 }
 

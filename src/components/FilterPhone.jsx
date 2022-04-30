@@ -19,7 +19,7 @@ const FilterPhone = ({filteredData, filter, setFilter}) => {
               return (
                 <StyledLink key={x.email} to={`/location/${x.consumerId}`}>
                   <li>
-                      <p className='name'>{x.name}</p>
+                      <p>{x.name}</p>
                       <p>{x.email}</p>
                       <p>{x.phoneNumber}</p>
                       <p>{x.occupationDate}</p>
