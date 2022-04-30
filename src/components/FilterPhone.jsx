@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import { StyledLink } from '../styles/Link.style'
+import { StyledList } from '../styles/List.style'
 import DropDown from './DropDown'
 import LoadMoreBtn from './LoadMoreBtn'
 import MainContent from './MainContent'
@@ -9,26 +11,26 @@ const FilterPhone = ({filteredData, filter, setFilter}) => {
 
   if(filter === 'is-phone') {
     return (
-    <div className='list-container'>
+    <>
       <DropDown setFilter={setFilter} />
-      <ul className="list">
+      <StyledList>
         {filteredData.slice(0, filterVisibile).map(data => {
           return data.map(x => {
               return (
-                <Link key={x.email} to={`/location/${x.consumerId}`}>
-                  <li className='list-item'>
+                <StyledLink key={x.email} to={`/location/${x.consumerId}`}>
+                  <li>
                       <p className='name'>{x.name}</p>
                       <p>{x.email}</p>
                       <p>{x.phoneNumber}</p>
                       <p>{x.occupationDate}</p>
                   </li>
-                </Link>
+                </StyledLink>
               )
             })
           })}
-      </ul>
+      </StyledList>
       <LoadMoreBtn setFilterVisible={setFilterVisible} filter={filter} />
-    </div>)
+    </>)
     } else if(filter === 'none') {
       return <MainContent />
     }

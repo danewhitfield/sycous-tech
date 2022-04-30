@@ -3,6 +3,9 @@ import FilterPhone from './FilterPhone'
 import LoadMoreBtn from './LoadMoreBtn'
 import DropDown from './DropDown'
 import { Link } from 'react-router-dom'
+import { StyledMain } from '../styles/Main.style'
+import { StyledList } from '../styles/List.style'
+import { StyledLink } from '../styles/Link.style'
 
 const MainContent = ({data}) => {
     const [filter, setFilter] = useState('none')
@@ -16,28 +19,26 @@ const MainContent = ({data}) => {
     })
 
         if(filter === 'none') {return (
-          <main className='main'>
+          <StyledMain>
               <DropDown setFilter={setFilter} filter={filter} />
-              <div className="list-container">
-                  <ul className='list'>
+                  <StyledList>
                       {consumers.slice(0, visibile).map(consumer => {
                           return consumer.map(person => {
                               return (
-                                <Link key={person.email} to={`/location/${person.consumerId}`}>
-                                    <li className='list-item'>
-                                        <p className='name'>{person.name}</p>
+                                <StyledLink key={person.email} to={`/location/${person.consumerId}`}>
+                                    <li>
+                                        <p>{person.name}</p>
                                         <p>{person.email}</p>
                                         <p>{person.phoneNumber}</p>
                                         <p>{person.occupationDate}</p>
                                     </li>
-                                </Link>
+                                </StyledLink>
                           )
                         })
                       })}
-                  </ul>
+                  </StyledList>
                   <LoadMoreBtn filter={filter} setVisible={setVisible} />
-              </div>
-          </main>
+          </StyledMain>
         )}
         else if(filter === 'is-phone') {
             return (

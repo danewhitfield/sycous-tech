@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { StyledLocationPage } from '../styles/LocationPage.style'
 import { getLocation } from '../utils/getLocation'
 
 const LocationPage = ({data}) => {
@@ -6,10 +7,10 @@ const LocationPage = ({data}) => {
   const location = getLocation(data, consumerId)
   
   if(location) return (
-    <div className='list-item location-container'>
+    <StyledLocationPage>
       <p>{location[0].postalCode}</p>
       <p>{location[0].street}</p>
-    </div>
+    </StyledLocationPage>
   )
 }
 

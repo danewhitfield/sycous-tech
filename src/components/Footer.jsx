@@ -1,12 +1,13 @@
 import React from 'react'
+import { StyledFooter } from '../styles/Footer.style'
 
 const Footer = () => {
   return (
-    <footer>
-      <p className='footer'>
-        Created by <a className='gh-link' target='blank' href="https://github.com/danewhitfield">Dane Whitfield&copy;</a>
+    <StyledFooter>
+      <p>
+        Created by <a target='blank' href="https://github.com/danewhitfield">Dane Whitfield&copy;</a>
       </p>
-    </footer>
+    </StyledFooter>
   )
 }
 

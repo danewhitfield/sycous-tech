@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyledDropdown } from '../styles/Dropdown.style'
 
 const DropDown = ({setFilter, filter}) => {
   const handleFilter = (e) => {
@@ -6,17 +7,17 @@ const DropDown = ({setFilter, filter}) => {
     }
     if(filter === 'none') {
         return (
-        <select name="filter-phone" id="filter-phone" onChange={handleFilter}>
+        <StyledDropdown name="filter-phone" id="filter-phone" onChange={handleFilter}>
             <option value="none">-None-</option>
             <option value="is-phone">Has a Mobile</option>
-        </select>
+        </StyledDropdown>
     )
   } else {
       return (
-          <select name="filter-phone" id="filter-phone" onChange={handleFilter}>
+          <StyledDropdown name="filter-phone" id="filter-phone" onChange={handleFilter}>
             <option value="is-phone">Has a Mobile</option>
             <option value="none">-None-</option>
-        </select>
+        </StyledDropdown>
       )
   }
 }

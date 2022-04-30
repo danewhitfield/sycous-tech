@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyledLoadMoreBtn } from '../styles/LoadMoreBtn.style'
 
 const LoadMoreBtn = ({filter, setVisible, setFilterVisible}) => {
   const loadMore = () => {
@@ -6,7 +7,7 @@ const LoadMoreBtn = ({filter, setVisible, setFilterVisible}) => {
   }
 
   return (
-    <button onClick={loadMore}>Load More</button>
+    <StyledLoadMoreBtn onClick={loadMore}>Load More</StyledLoadMoreBtn>
   )
 }
 

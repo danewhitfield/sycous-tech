@@ -1,11 +1,12 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import { StyledHeader } from '../styles/Header.style'
+import { StyledLink } from '../styles/Link.style'
 
 const Header = () => {
   return (
-    <header className='header'> 
-        <Link to={'/'}><h1>Sycous Data</h1></Link>
-    </header>
+    <StyledHeader> 
+        <StyledLink to={'/'}><h1>Sycous Data</h1></StyledLink>
+    </StyledHeader>
   )
 }
 
